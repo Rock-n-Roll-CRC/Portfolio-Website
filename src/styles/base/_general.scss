@@ -1,0 +1,14 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+@use "../settings" as *;
+
+html {
+  font-size: calc(62.5% + 0.05vi);
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: $font-weight-regular;
+  color: $color-neutral-10;
+  background-color: $color-neutral-1;
+}

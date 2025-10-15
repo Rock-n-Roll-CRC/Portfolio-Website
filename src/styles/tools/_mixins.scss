@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "../settings/breakpoints" as *;
+
+/* ==========================================================================
+   Positioning:
+   ========================================================================== */
+
+@mixin absolute-shorthand(
+  $inset-block-start: auto,
+  $inset-inline-end: auto,
+  $inset-block-end: auto,
+  $inset-inline-start: auto
+) {
+  position: absolute;
+  inset: $inset-block-start $inset-inline-end $inset-block-end
+    $inset-inline-start;
+}
+
+/* ==========================================================================
+   Display:
+   ========================================================================== */
+
+@mixin flex-shorthand(
+  $flex-direction: row,
+  $flex-wrap: nowrap,
+  $gap: null,
+  $align-items: null,
+  $justify-content: null
+) {
+  display: flex;
+  flex-flow: $flex-direction $flex-wrap;
+  gap: $gap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin grid-shorthand(
+  $grid-template-rows: null,
+  $grid-template-columns: null,
+  $row-gap: 0,
+  $column-gap: 0,
+  $align-items: null,
+  $justify-items: null
+) {
+  display: grid;
+  grid-template-rows: $grid-template-rows;
+  grid-template-columns: $grid-template-columns;
+  gap: $row-gap $column-gap;
+  place-items: $align-items $justify-items;
+}
+
+/* ==========================================================================
+   Dimensions:
+   ========================================================================== */
+
+@mixin size-shorthand($inline-size, $block-size) {
+  inline-size: $inline-size;
+  block-size: $block-size;
+}
+
+@mixin max-size-shorthand($max-inline-size, $max-block-size) {
+  max-inline-size: $max-inline-size;
+  max-block-size: $max-block-size;
+}
+
+/* ==========================================================================
+   Media Queries:
+   ========================================================================== */
+
+@mixin media-up-shorthand($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down-shorthand($size) {
+  @media (max-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}

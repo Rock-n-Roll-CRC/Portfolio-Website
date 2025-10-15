@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "colors" as *;
+
+/* ==========================================================================
+   Shadow System:
+   ========================================================================== */
+
+@function get-shadow($shadow-size, $shadow-color: $color-neutral-10) {
+  $shadows: (
+    extra-small: (
+      0 0.1rem 0.2rem 0 rgb($shadow-color, 0.05),
+    ),
+    small: (
+      0 0.1rem 0.3rem 0 rgb($shadow-color, 0.1),
+      0 0.1rem 0.2rem -0.1rem rgb($shadow-color, 0.1),
+    ),
+    medium: (
+      0 0.4rem 0.6rem -0.1rem rgb($shadow-color, 0.1),
+      0 0.2rem 0.4rem -0.2rem rgb($shadow-color, 0.1),
+    ),
+    large: (
+      0 1rem 1.5rem -0.3rem rgb($shadow-color, 0.1),
+      0 0.4rem 0.6rem -0.4rem rgb($shadow-color, 0.1),
+    ),
+    extra-large: (
+      0 2rem 2.5rem -0.5rem rgb($shadow-color, 0.1),
+      0 0.8rem 1rem -0.6rem rgb($shadow-color, 0.1),
+    ),
+  );
+
+  @return map.get($shadows, $shadow-size);
+}
