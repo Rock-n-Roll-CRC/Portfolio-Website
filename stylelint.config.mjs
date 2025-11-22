@@ -31,7 +31,10 @@ const stylelintConfig = {
     ],
     "plugin/use-logical-properties-and-values": [true, { severity: "warning" }],
     "plugin/use-logical-units": [true, { severity: "warning" }],
-    "plugin/selector-bem-pattern": { preset: "bem" },
+    "plugin/selector-bem-pattern": {
+      preset: "bem",
+      ignoreSelectors: /\#\{\$[a-z]+(?:-[a-z]+)*\}/,
+    },
     "plugin/no-unresolved-module": true,
     "plugin/declaration-block-no-ignored-properties": true,
     "scale-unlimited/declaration-strict-value": [
