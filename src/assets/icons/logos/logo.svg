@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="32.5 17.5 225 269">
+  <!-- Second D (behind) -->
+  <path d="M 100 84 L 100 284 L 190 284 C 235 284 255 254 255 184 C 255 114 235 84 190 84 Z M 135 119 L 185 119 C 220 119 220 144 220 184 C 220 224 220 249 185 249 L 135 249 Z" fill="#adb5bd" stroke="#f8f9fa" stroke-width="5"/>
+
+  <!-- First D (in front) -->
+  <path d="M 35 20 L 35 220 L 125 220 C 170 220 190 190 190 120 C 190 50 170 20 125 20 Z M 70 55 L 120 55 C 155 55 155 80 155 120 C 155 160 155 185 120 185 L 70 185 Z" fill="#339af0" stroke="#f8f9fa" stroke-width="5"/>
+</svg>
