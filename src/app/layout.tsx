@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { Roboto } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import URLSectionTracker from "@/components/URLSectionTracker/URLSectionTraker";
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={roboto.className}>
       <body>
+        <Toaster />
         <URLSectionTracker />
 
         {children}

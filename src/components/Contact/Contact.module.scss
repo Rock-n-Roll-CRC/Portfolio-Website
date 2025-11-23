@@ -1,0 +1,162 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.contact {
+  $this: &;
+
+  @include flex-shorthand(column, nowrap, $whitespace-9);
+
+  padding: $whitespace-11 0;
+  cursor: default;
+
+  &__heading {
+    font-size: $font-size-6;
+    color: $color-primary-10;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  &__body {
+    @include flex-shorthand(column, wrap, $whitespace-10);
+  }
+
+  &__left-container {
+    @include flex-shorthand(column, nowrap, $whitespace-7);
+
+    flex: 2;
+    min-inline-size: 25rem;
+    max-inline-size: 50rem;
+    padding: $whitespace-7 0 0 0;
+    border-block-start: 0.1rem solid $color-neutral-10;
+  }
+
+  &__title {
+    font-size: $font-size-9;
+    font-weight: $font-weight-semi-bold;
+    color: $color-neutral-9;
+  }
+
+  &__description {
+    font-size: $font-size-6;
+    color: $color-neutral-8;
+  }
+
+  &__description-break {
+    display: none;
+  }
+
+  &__contact-container {
+    @include flex-shorthand(column, nowrap, $whitespace-5);
+  }
+
+  &__contact-item {
+    @include flex-shorthand(row, nowrap, $whitespace-4, center);
+  }
+
+  &__contact-icon {
+    @include size-shorthand(2.5rem, 2.5rem);
+
+    color: $color-neutral-10;
+  }
+
+  &__form {
+    @include flex-shorthand(column, nowrap, $whitespace-8);
+
+    flex: 1;
+    inline-size: 100%;
+    min-inline-size: 25rem;
+    max-inline-size: 45rem;
+    padding: $whitespace-7;
+    margin: 0 auto;
+    color: $color-neutral-10;
+    border: 0.1rem solid $color-neutral-10;
+  }
+
+  &__form-left {
+    @include flex-shorthand(column, nowrap, $whitespace-7);
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: block;
+
+    &::after {
+      @include absolute-shorthand(0, 1%, 0, 1%);
+
+      z-index: 1;
+      content: "";
+      border: 0.1rem solid $color-neutral-10;
+      transform: translateY($whitespace-2);
+    }
+  }
+
+  &__input-item {
+    @include flex-shorthand(column, nowrap, $whitespace-5);
+  }
+
+  &__input-label {
+    font-size: $font-size-2;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+  }
+
+  &__input,
+  &__text-area {
+    @include remove-input-styles;
+
+    position: relative;
+    z-index: 2;
+    display: block;
+    inline-size: 100%;
+    padding: $whitespace-4 $whitespace-4;
+    color: $color-neutral-10;
+    resize: none;
+    border: 0.1rem solid $color-neutral-10;
+  }
+
+  &__input-error {
+    font-size: $font-size-4;
+    color: $color-status-error;
+  }
+
+  &__cta {
+    @include remove-button-styles;
+
+    padding: $whitespace-5 $whitespace-7;
+    color: $color-neutral-1;
+    cursor: pointer;
+    background-color: $color-primary-10;
+    border: 0.1rem solid $color-neutral-1;
+    transition: all 0.15s;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary-10;
+        background-color: $color-neutral-1;
+        border-color: $color-neutral-10;
+      }
+    }
+  }
+
+  @include media-up-shorthand(mobile-l-4) {
+    &__body {
+      flex-direction: row;
+    }
+
+    &__description-break {
+      display: unset;
+    }
+
+    &__left-container {
+      max-inline-size: 35rem;
+    }
+
+    &__form {
+      min-inline-size: 30rem;
+      max-inline-size: none;
+      margin: 0;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
+import Contact from "@/components/Contact/Contact";
 import HomepageNav from "@/components/HomepageNav/HomepageNav";
 import Projects from "@/components/Projects/Projects";
 import Skills from "@/components/Skills/Skills";
@@ -119,6 +120,8 @@ export default function HomePage() {
         <Skills />
 
         <Projects />
+
+        <Contact />
       </main>
     </div>
   );
