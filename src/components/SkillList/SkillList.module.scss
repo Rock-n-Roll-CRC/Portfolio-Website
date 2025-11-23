@@ -1,0 +1,35 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.skill-list {
+  @include remove-list-styles;
+  @include grid-shorthand(
+    repeat(4, max-content),
+    repeat(3, max-content),
+    $whitespace-8,
+    $whitespace-5
+  );
+
+  justify-content: space-between;
+
+  @include media-up-shorthand(mobile-m) {
+    @include grid-shorthand(
+      repeat(4, max-content),
+      repeat(3, max-content),
+      $whitespace-8,
+      $whitespace-8
+    );
+  }
+
+  @include media-up-shorthand(mobile-l-1) {
+    @include grid-shorthand(
+      repeat(3, max-content),
+      repeat(4, max-content),
+      $whitespace-8,
+      $whitespace-8
+    );
+
+    grid-row: -1;
+    grid-column: 2;
+  }
+}
