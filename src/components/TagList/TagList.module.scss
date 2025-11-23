@@ -1,0 +1,13 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.tag-list {
+  @include remove-list-styles;
+  @include flex-shorthand(row, wrap, $whitespace-4);
+
+  @include media-up-shorthand(mobile-l-1) {
+    &--skills {
+      display: none;
+    }
+  }
+}

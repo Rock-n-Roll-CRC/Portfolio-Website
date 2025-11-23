@@ -1,0 +1,9 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.project-list {
+  @include remove-list-styles;
+
+  // @include flex-shorthand(column, nowrap, $whitespace-10);
+  @include flex-shorthand(column, nowrap, $whitespace-12);
+}

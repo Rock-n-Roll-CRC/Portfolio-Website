@@ -1,0 +1,16 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.projects {
+  @include flex-shorthand(column, nowrap, $whitespace-9);
+
+  padding: $whitespace-11 0;
+  cursor: default;
+
+  &__heading {
+    font-size: $font-size-6;
+    color: $color-primary-10;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+}

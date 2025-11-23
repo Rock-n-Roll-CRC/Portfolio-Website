@@ -1,0 +1,150 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.project-item {
+  $this: &;
+
+  @include flex-shorthand(column, nowrap, $whitespace-8, null, space-between);
+
+  &__body {
+    @include flex-shorthand(column, nowrap, $whitespace-9, flex-start);
+
+    flex: 1;
+    max-inline-size: 50rem;
+  }
+
+  &__text-content {
+    @include flex-shorthand(column, nowrap, $whitespace-6);
+  }
+
+  &__position {
+    font-size: $font-size-3;
+    font-style: italic;
+    color: $color-neutral-9;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+  }
+
+  &__container {
+    @include flex-shorthand(column, nowrap, $whitespace-4);
+  }
+
+  &__title {
+    font-size: $font-size-9;
+    font-weight: $font-weight-bold;
+  }
+
+  &__description {
+    font-size: $font-size-6;
+    color: $color-neutral-8;
+  }
+
+  &__view-button-wrapper {
+    border: 0.1rem solid $color-neutral-10;
+  }
+
+  &__view-button {
+    display: block;
+    padding: $whitespace-5 $whitespace-7;
+    color: $color-neutral-1;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: $color-primary-10;
+    transform: translate(-1rem, -1rem);
+    transition: transform 0.15s;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translate(0);
+      }
+    }
+  }
+
+  &__media-container {
+    @include flex-shorthand(column, nowrap, $whitespace-8, center);
+
+    inline-size: 100%;
+    max-inline-size: 55rem;
+    margin: 0 auto;
+  }
+
+  &__tab-container {
+    @include flex-shorthand(row, nowrap);
+  }
+
+  &__tab {
+    @include remove-button-styles;
+
+    padding: 0 $whitespace-6 $whitespace-3;
+    font-size: $font-size-5;
+    color: $color-neutral-10;
+    cursor: pointer;
+    border-block-end: 0.2rem solid $color-neutral-5;
+
+    &--open {
+      border-color: $color-primary-10;
+    }
+  }
+
+  &__media {
+    @include flex-shorthand(column, nowrap, $whitespace-7, center);
+
+    inline-size: 100%;
+  }
+
+  &__media-item {
+    @include size-shorthand(100%, 35rem);
+
+    object-fit: cover;
+    object-position: top;
+    overflow-clip-margin: unset;
+  }
+
+  &__media-controls {
+    @include flex-shorthand(row, nowrap, null, center, space-between);
+
+    inline-size: 100%;
+    padding: 0 $whitespace-8;
+  }
+
+  &__media-control {
+    @include remove-button-styles;
+
+    cursor: pointer;
+  }
+
+  &__media-icon {
+    @include size-shorthand(2.5rem, 2.5rem);
+  }
+
+  @include media-up-shorthand(mobile-l) {
+    &__body {
+      min-inline-size: 32rem;
+    }
+
+    &__media-container {
+      min-inline-size: 32rem;
+    }
+  }
+
+  @include media-up-shorthand(tablet-2) {
+    flex-direction: row;
+    gap: $whitespace-12;
+
+    &__media-container {
+      inline-size: 42rem;
+    }
+
+    &__media-item {
+      block-size: 30rem;
+    }
+
+    &:nth-child(even) {
+      #{$this}__media-container {
+        order: -1;
+      }
+    }
+  }
+}

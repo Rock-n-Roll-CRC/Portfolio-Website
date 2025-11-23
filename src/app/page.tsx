@@ -4,6 +4,7 @@ import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 import HomepageNav from "@/components/HomepageNav/HomepageNav";
+import Projects from "@/components/Projects/Projects";
 import Skills from "@/components/Skills/Skills";
 
 import danilDikhtyarIMG from "@/assets/images/danil-dikhtyar.jpg";
@@ -116,6 +117,8 @@ export default function HomePage() {
         </section>
 
         <Skills />
+
+        <Projects />
       </main>
     </div>
   );
