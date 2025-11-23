@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 
 import { Roboto } from "next/font/google";
 
+import URLSectionTracker from "@/components/URLSectionTracker/URLSectionTraker";
+
 import "@/styles/main.scss";
 
 const roboto = Roboto({ subsets: ["latin", "cyrillic", "vietnamese"] });
@@ -24,7 +26,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={roboto.className}>
-      <body>{children}</body>
+      <body>
+        <URLSectionTracker />
+
+        {children}
+      </body>
     </html>
   );
 }
