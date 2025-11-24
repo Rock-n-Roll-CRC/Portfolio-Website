@@ -19,7 +19,7 @@ const Inputs = z.object({
     .min(2, "Full name must be at least 2 characters")
     .max(100, "Full name must not exceed 100 characters")
     .regex(
-      /^[a-zA-Z\s'-]+$/,
+      /^[\p{L}\s'-]+$/u,
       "Full name can only contain letters, spaces, hyphens, and apostrophes",
     )
     .trim()
