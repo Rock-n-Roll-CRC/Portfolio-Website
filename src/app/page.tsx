@@ -99,7 +99,7 @@ export default function HomePage() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/Danil_Dikhtyar-Resume-2025-Frontend_Developer.pdf"
                 target="_blank"
                 className={styles["hero__cta"]}
               >

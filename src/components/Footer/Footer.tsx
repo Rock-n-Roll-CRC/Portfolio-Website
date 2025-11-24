@@ -54,7 +54,7 @@ export default function Footer() {
               </div>
 
               <a
-                href="/resume.pdf"
+                href="/Danil_Dikhtyar-Resume-2025-Frontend_Developer.pdf"
                 target="_blank"
                 className={`${styles["footer__cta-button"] ?? ""}  ${styles["footer__cta-button--secondary"] ?? ""}`}
               >
