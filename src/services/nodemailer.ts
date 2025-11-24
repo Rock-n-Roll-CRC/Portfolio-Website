@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.SMTP_API_KEY,
-    pass: process.env.SMTP_SECRET_KEY,
+    user: process.env["SMTP_API_KEY"],
+    pass: process.env["SMTP_SECRET_KEY"],
   },
 });
 
